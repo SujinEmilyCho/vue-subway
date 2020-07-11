@@ -1,7 +1,7 @@
 # SubWay 미션 Vue 변환
 
 ## 요구사항
-- [ ] Vue CIL을 이용해 Vue Project로 만들어 진행한다.
+- [x] Vue CIL을 이용해 Vue Project로 만들어 진행한다.
 - [ ] 지하철 마지막 미션인 favorite를 이용해 View를 Vue로 변경한다.
 - [ ] API 통신은 자신이 만든 백엔드 프로그램으로 진행한다.
 - [ ] 1단계 admin을 먼저 구현한다.

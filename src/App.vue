@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <admin-header></admin-header>
-    <router-view></router-view>
+    <router-view
+      v-bind:stations="stations"
+      v-on:addStation="addStation"
+      v-on:deleteStation="deleteStation"
+    ></router-view>
   </div>
 </template>
 
@@ -10,6 +14,29 @@ import AdminHeader from './components/AdminHeader';
 export default {
   name: 'app',
   components: { AdminHeader },
+  data: function() {
+    return {
+      stations: [
+        { id: 1, name: '낙성대역' },
+        { id: 2, name: '사당역' },
+      ],
+    };
+  },
+  methods: {
+    addStation(stationName) {
+      const lastStation = this.stations.pop();
+      const lastId = lastStation.id;
+      this.stations.push(lastStation);
+      this.stations.push({ id: lastId + 1, name: stationName });
+    },
+    deleteStation(stationId) {
+      const index = this.stations.findIndex(
+        station => station.id === stationId,
+      );
+      console.log(index);
+      this.stations.splice(index, 1);
+    },
+  },
 };
 </script>
 

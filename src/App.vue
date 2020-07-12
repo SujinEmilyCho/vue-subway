@@ -1,11 +1,70 @@
 <template>
-	<div id="app"></div>
+  <div id="app">
+    <admin-header></admin-header>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
+import AdminHeader from './components/AdminHeader';
 export default {
-	name: 'app',
+  name: 'app',
+  components: { AdminHeader },
 };
 </script>
 
-<style></style>
+<style>
+/*admin-app.css 파일*/
+.app-container {
+  height: calc(100vh - 78px);
+}
+
+.main-logo {
+  width: 170px;
+}
+
+body {
+  overflow-y: hidden;
+}
+
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+.width-350px {
+  width: 350px;
+}
+
+.width-400px {
+  width: 400px;
+}
+
+.width-450px {
+  width: 450px;
+}
+
+.top-28px {
+  top: 28px;
+}
+
+.left-10px {
+  left: 10px;
+}
+
+.right-10px {
+  right: 10px;
+}
+
+.top-50 {
+  top: 50%;
+}
+
+.bottom-6px {
+  bottom: 6px;
+}
+
+.height-90 {
+  height: 90%;
+}
+</style>
